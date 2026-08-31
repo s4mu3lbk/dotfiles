@@ -1,0 +1,42 @@
+result
+neovide_backtraces.log
+node_modules
+
+# sops-nix: the secrets.yaml should be ENCRYPTED before committing
+# Never commit the plaintext secrets or age private keys
+*.decrypted
+keys.txt
+*.agekey
+age.key
+
+# Credential / key material
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+!*.pub
+privatekey
+auth.json
+root@*
+
+# Session dumps, recordings, AI session exports
+session-*.md
+*.webm
+
+# Binary packages — fetch via Nix instead
+*.deb
+*.tar.gz
+
+# Tool-local state
+.antigravitycli/
+.opencode/
+.agent/
+
+# graphify: never commit per-machine state or caches
+.graphify/branch.json
+.graphify/worktree.json
+.graphify/needs_update
+.graphify/cache/

@@ -65,9 +65,11 @@ the tunnel rule.
 
 ### 4. DNS
 
-The wg interface config omits `DNS = 10.255.255.4`. The server keeps its
-system DNS, which traverses the tunnel anyway; this avoids a resolvconf
-dependency during early boot.
+The wg interface config omits `DNS = 10.255.255.4`. With `services.resolved`
+and its stub listener, the DHCP-provided LAN DNS upstreams stay on the
+physical link via wg-quick's `suppress_prefixlength` rule. Omitting `DNS=` is
+still correct because the endpoint is a literal IP (no name resolution needed
+to bring the tunnel up) and it avoids a resolvconf dependency at boot.
 
 ### 5. Secrets
 
@@ -87,9 +89,11 @@ key from the `[Peer] PresharedKey` line.
   connectivity is preserved but **unencrypted**. This is "always connect," not
   a kill switch. Hard-blocking non-tunnel egress (a true kill switch) is
   explicitly out of scope.
-- If `wg-quick-windscribe` fails at boot, systemd retries; the
-  inbound-preservation rule is only installed on successful `postUp`, so no
-  half-configured state.
+- If `wg-quick-windscribe` fails at boot, the module sets
+  `Restart=on-failure` on the unit so transient failures (DNS/route race,
+  endpoint unreachable) retry; without that fix the oneshot unit would stay
+  down (now fixed in the module). The inbound-preservation rule is only
+  installed on successful `postUp`, so no half-configured state.
 
 ## Verification
 

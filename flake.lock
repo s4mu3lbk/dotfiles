@@ -316,11 +316,11 @@
     },
     "nixos-private": {
       "locked": {
-        "lastModified": 1789642537,
-        "narHash": "sha256-UYr15PpHJf05HVJdNJkHAmjkdKkdYvOFNOB5aSDEYzY=",
+        "lastModified": 1789650186,
+        "narHash": "sha256-Y3wB5DN1UhJXfkikNMdMOiSW3UuiPFs934W2p2vJYHQ=",
         "ref": "refs/heads/master",
-        "rev": "0895913092ecca27e8a14968eaa59933a311abb4",
-        "revCount": 5,
+        "rev": "b2f1c196e126fe4c5c38074dfb93045c98dd2100",
+        "revCount": 6,
         "type": "git",
         "url": "file:///home/samuel/nixos-private"
       },

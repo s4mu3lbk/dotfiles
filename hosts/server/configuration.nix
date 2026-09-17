@@ -19,6 +19,9 @@
 
     # Private modules (VPN, work infra) — from the local nixos-private flake
     inputs.nixos-private.nixosModules.networking
+
+    # Always-on Windscribe VPN (server only) — from the local nixos-private flake
+    inputs.nixos-private.nixosModules.server-vpn
   ];
 
   # sops targets for the private networking module's VPN secrets

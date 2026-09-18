@@ -1,7 +1,7 @@
 {
   "AGENTS.md": {
-    "mtime": 1788719352547.2378,
-    "hash": "46d66b31dc59f7dcf90f71457e78c4fd"
+    "mtime": 1789716349564.9473,
+    "hash": "3406947e589a9ab9866695447cd01d43"
   },
   "README.md": {
     "mtime": 1788256292309.4148,
@@ -112,7 +112,31 @@
     "hash": "b8f48ef2357fe4a8d7fca2c0c1f1df7b"
   },
   "docs/superpowers/specs/2026-09-17-windscribe-server-vpn-design.md": {
-    "mtime": 1789641049013.1528,
-    "hash": "b29df147f15166f7998603e27dbc98ff"
+    "mtime": 1789650215159.2422,
+    "hash": "d42f09a0197d5a32ea6a5a625a967783"
+  },
+  ".graphify/GRAPH_REPORT.md": {
+    "mtime": 1789647995280.8716,
+    "hash": "4f9228e90266e53cd83ddcf07fc0fc39"
+  },
+  ".graphify/graph.html": {
+    "mtime": 1783283844620.2156,
+    "hash": "7e2b9ae2a6a0c862b44695dc3e260c19"
+  },
+  "docs/superpowers/plans/2026-07-08-automated-package-updates.md": {
+    "mtime": 1783502071595.4292,
+    "hash": "c586b2a9d8ebf1233908eec38f48f1d1"
+  },
+  "docs/superpowers/plans/2026-09-18-windscribe-cli-server.md": {
+    "mtime": 1789736128539.9182,
+    "hash": "2d58a9409eeedd4be18d319e4df3eded"
+  },
+  "docs/superpowers/specs/2026-07-08-automated-package-updates-design.md": {
+    "mtime": 1783501477415.2922,
+    "hash": "ef2608b127fe7f144c73e320365b1f87"
+  },
+  "docs/superpowers/specs/2026-09-18-windscribe-cli-server-design.md": {
+    "mtime": 1789735973480.0327,
+    "hash": "bd9e692b239fe043a244520b1784c060"
   }
 }

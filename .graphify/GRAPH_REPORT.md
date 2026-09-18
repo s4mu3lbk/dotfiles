@@ -1,7 +1,7 @@
-# Graph Report - .  (2026-09-17)
+# Graph Report - .  (2026-09-18)
 
 ## Corpus Check
-- Corpus is ~7,062 words - fits in a single context window. You may not need a graph.
+- Corpus is ~17,274 words - fits in a single context window. You may not need a graph.
 
 ## Summary
 - 44 nodes · 22 edges · 5 communities detected
@@ -13,12 +13,12 @@
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 28 · Candidates: 107
-- Excluded: 14 untracked · 3481 ignored · 2 sensitive · 0 missing committed
+- Included files: 34 · Candidates: 122
+- Excluded: 0 untracked · 3509 ignored · 2 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `ab146a6`
+- Built from Git commit: `83449da`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `Home Manager` - 9 edges
@@ -49,30 +49,30 @@
 
 ### Community 0 - "Community 0"
 Cohesion: 0.25
-Nodes (8): Age Encryption, Agent Instructions, Custom Package Overlays, Graphify Rules, NixOS Dotfiles, Nushell Scripts, sops-nix Secrets, Systemd Boot Analysis
-
-### Community 1 - "Community 1"
-Cohesion: 0.25
-Nodes (8): Firefox ESR, Fish Shell, Ghostty Terminal, Home Manager, Nushell, Qutebrowser, Tmux, Vivaldi Browser
+Nodes (8): NixOS Dotfiles, sops-nix Secrets, Custom Package Overlays, Nushell Scripts, Systemd Boot Analysis, Age Encryption, Agent Instructions, Graphify Rules
 
 ### Community 2 - "Community 2"
 Cohesion: 0.40
-Nodes (5): ASUS Zenbook, Flake Configuration, KDE Plasma 6, NixOS System Configuration, System Modules
+Nodes (5): Flake Configuration, NixOS System Configuration, KDE Plasma 6, ASUS Zenbook, System Modules
 
-### Community 3 - "Community 3"
-Cohesion: 1.00
-Nodes (2): LazyVim, Neovim
+### Community 1 - "Community 1"
+Cohesion: 0.25
+Nodes (8): Home Manager, Fish Shell, Nushell, Ghostty Terminal, Tmux, Vivaldi Browser, Firefox ESR, Qutebrowser
 
 ### Community 8 - "Community 8"
 Cohesion: 1.00
 Nodes (1): Hyprland
 
+### Community 3 - "Community 3"
+Cohesion: 1.00
+Nodes (2): Neovim, LazyVim
+
 ## Knowledge Gaps
 - **17 isolated node(s):** `KDE Plasma 6`, `Hyprland`, `Fish Shell`, `Nushell`, `Ghostty Terminal` (+12 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 3`** (2 nodes): `LazyVim`, `Neovim`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 8`** (1 nodes): `Hyprland`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 3`** (2 nodes): `Neovim`, `LazyVim`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

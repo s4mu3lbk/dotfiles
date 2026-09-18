@@ -23,7 +23,7 @@
     # Private modules (VPN, work infra) — from the local nixos-private flake
     inputs.nixos-private.nixosModules.networking
 
-    # Always-on Windscribe VPN (server only) — from the local nixos-private flake
+    # Windscribe wg-quick tunnel — manual fallback only (autostart off), from the local nixos-private flake
     inputs.nixos-private.nixosModules.server-vpn
 
     # Windscribe CLI + helper daemon (same module the desktop uses)

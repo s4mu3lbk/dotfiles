@@ -316,11 +316,11 @@
     },
     "nixos-private": {
       "locked": {
-        "lastModified": 1789736323,
-        "narHash": "sha256-zZD+4GCt50pMtNWn+tFFNSEcchihWglMGakTy1iubYQ=",
+        "lastModified": 1789737061,
+        "narHash": "sha256-u7pA+DLUPTHF6NFMHZAqBeVqghPLlc4hk+oSZbg5pOY=",
         "ref": "refs/heads/master",
-        "rev": "3027eec7fa02126a9689acf5c6d9b824879258e5",
-        "revCount": 10,
+        "rev": "7737383e4b89dc8e4cf05907a5ab5db916fc1335",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://git@github.com/s4mu3lbk/dotfiles-private.git"
       },

@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   bins = with pkgs; [
     git
     gcc
@@ -77,35 +78,32 @@
     glib
   ];
 
-  linuxBins = with pkgs;
-    if stdenv.isDarwin
-    then []
-    else [
-      # vala
-      vala-language-server
-      mesonlsp
-      blueprint-compiler
-      meson
-      pkg-config
-      ninja
-      uncrustify
+  linuxBins = with pkgs; [
+    # vala
+    vala-language-server
+    mesonlsp
+    blueprint-compiler
+    meson
+    pkg-config
+    ninja
+    uncrustify
 
-      # clipboard
-      wl-clipboard
-      xsel
-      xclip
-    ];
+    # clipboard
+    wl-clipboard
+    xsel
+    xclip
+  ];
   nvim-wrapped = pkgs.symlinkJoin {
     name = "nvim-wrapped";
-    paths = [pkgs.neovim];
-    buildInputs = [pkgs.makeWrapper];
+    paths = [ pkgs.neovim ];
+    buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/nvim \
-        --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [pkgs.sqlite]}
+        --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.sqlite ]}
     '';
   };
 in
-  pkgs.symlinkJoin {
-    name = "nvim";
-    paths = [nvim-wrapped] ++ bins ++ linuxBins;
-  }
+pkgs.symlinkJoin {
+  name = "nvim";
+  paths = [ nvim-wrapped ] ++ bins ++ linuxBins;
+}

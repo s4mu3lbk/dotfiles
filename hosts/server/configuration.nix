@@ -17,6 +17,9 @@
     ../../system/core/locale.nix
     ../../system/core/virtualisation.nix
 
+    # Desktop environments (inert unless enabled — see specialisation below)
+    ../../system/de/cosmic.nix
+
     # Private modules (VPN, work infra) — from the local nixos-private flake
     inputs.nixos-private.nixosModules.networking
 
@@ -27,6 +30,19 @@
   # sops targets for the private networking module's VPN secrets
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.keyFile = "/home/samuel/.config/sops/age/keys.txt";
+
+  # COSMIC desktop as an opt-in specialisation — boot into it via the
+  # bootloader entry or `sudo /run/current-system/specialisation/cosmic/bin/switch-to-configuration switch`
+  specialisation.cosmic.configuration = {
+    imports = [
+      # Excluded from the server's base imports; needed for a usable desktop
+      ../../system/core/audio.nix
+      ../../system/core/fonts.nix
+    ];
+
+    system.nixos.tags = ["cosmic"];
+    cosmic.enable = true;
+  };
 
   # SSH — hardened: key-based auth only, no root login
   # (inlined here because system/core/services.nix is desktop-oriented)

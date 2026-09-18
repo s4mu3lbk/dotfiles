@@ -38,8 +38,6 @@
       COSMIC_DISABLE_DIRECT_SCANOUT = "1"; # Disable direct scanout for stability
       COSMIC_FORCE_SOFTWARE_CURSOR = "0"; # Keep hardware cursor enabled
     };
-    environment.cosmic.excludePackages = with pkgs; [cosmic-term];
-
     environment.systemPackages = lib.mkIf config.cosmic.monitor.enable (with pkgs; [
       cosmic-monitor
     ]);

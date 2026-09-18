@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }:
 let nvim = import ../../packages/nvim { inherit pkgs; };
 in {
-  xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/packages/nvim";
+  xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/packages/nvim";
 
-  xdg.desktopEntries."nvim" = lib.mkIf pkgs.stdenv.isLinux {
+  xdg.desktopEntries."nvim" = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     name = "NeoVim";
     comment = "Edit text files";
     icon = "nvim";
@@ -15,7 +15,7 @@ in {
 
   xdg.mimeApps.defaultApplications."text/plain" = "nvim.desktop";
 
-  xdg.desktopEntries."vim" = lib.mkIf pkgs.stdenv.isLinux {
+  xdg.desktopEntries."vim" = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     name = "Vim";
     noDisplay = true;
   };

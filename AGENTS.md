@@ -8,7 +8,7 @@ Welcome to `samuel`'s NixOS dotfiles repository!
 
 ## General Information
 
-- **Flake Location**: The main configuration entry point is `flake.nix` located at `/home/samuel/nixos-dotfiles/flake.nix`.
+- **Flake Location**: The main configuration entry point is `flake.nix` located at `/home/samuel/dotfiles/flake.nix`.
 - **NixOS Configuration**: Managed through the `nixos` target (`.#nixos`).
 - **Home Manager Configuration**: The Home Manager module is integrated directly into the NixOS flake in `flake.nix` under the `homeConfigurations` target for `samuel` (`.#samuel`).
 - **Language**: The project heavily utilizes the Nix language. When making configurations, prefer native Nix or NixOS/Home Manager options.

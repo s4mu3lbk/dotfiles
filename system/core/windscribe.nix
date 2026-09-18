@@ -21,8 +21,10 @@
     before = [ "network-pre.target" ];
     wants = [ "network-pre.target" ];
     wantedBy = [ "multi-user.target" ];
-    path = with pkgs; [ iptables iproute2 wireguard-tools amneziawg-tools amneziawg-go kmod openresolv systemd procps dbus nettools openvpn ] ++ [ "/opt/windscribe" "/run/wrappers" ];
+    path = with pkgs; [ iptables iproute2 wireguard-tools amneziawg-tools amneziawg-go kmod openresolv systemd procps dbus nettools openvpn util-linux gawk ] ++ [ "/opt/windscribe" "/run/wrappers" ];
     environment = {
+      # Neutralizes the helper's hardcoded FHS PATH (see libfakesetgid.so in packages/windscribe)
+      LD_PRELOAD = "${pkgs.windscribe}/lib/libfakesetgid.so";
       WG_I_PREFER_BUGGY_USERSPACE_TO_POLISHED_KMOD = "1";
     };
     serviceConfig = {

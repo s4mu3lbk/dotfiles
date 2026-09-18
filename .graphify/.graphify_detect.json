@@ -1,0 +1,65 @@
+{
+  "files": {
+    "code": [
+      "packages/nvim/init.lua",
+      "packages/nvim/lua/config/autocmds.lua",
+      "packages/nvim/lua/config/keymaps.lua",
+      "packages/nvim/lua/config/lazy.lua",
+      "packages/nvim/lua/config/options.lua",
+      "packages/nvim/lua/plugins/avante.lua",
+      "packages/nvim/lua/plugins/dap.lua",
+      "packages/nvim/lua/plugins/example.lua",
+      "packages/nvim/lua/plugins/git-conflict.lua",
+      "packages/nvim/lua/plugins/gitsigns.lua",
+      "packages/nvim/lua/plugins/mason.lua",
+      "packages/nvim/lua/plugins/opencode.lua",
+      "packages/nvim/lua/plugins/render-markdown.lua",
+      "packages/nvim/lua/plugins/sidekick.lua",
+      "packages/nvim/lua/plugins/snacks.lua",
+      "packages/nvim/lua/plugins/surround.lua",
+      "packages/nvim/lua/plugins/telescope.lua",
+      "packages/nvim/lua/plugins/test.lua",
+      "packages/nvim/lua/plugins/treesitter.lua",
+      "packages/nvim/lua/plugins/which-key.lua"
+    ],
+    "document": [
+      "AGENTS.md",
+      "README.md",
+      "docs/superpowers/plans/2026-07-06-cosmic-monitor.md",
+      "docs/superpowers/plans/2026-09-17-windscribe-server-vpn.md",
+      "docs/superpowers/specs/2026-07-06-cosmic-monitor-design.md",
+      "docs/superpowers/specs/2026-09-17-windscribe-server-vpn-design.md",
+      "packages/nvim/README.md"
+    ],
+    "paper": [],
+    "image": [
+      "packages/antigravity/antigravity.png"
+    ],
+    "video": []
+  },
+  "total_files": 28,
+  "total_words": 7062,
+  "needs_graph": false,
+  "warning": "Corpus is ~7,062 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [
+    "home/secrets.nix",
+    "secrets/secrets.yaml"
+  ],
+  "graphifyignore_patterns": 29,
+  "scope": {
+    "requested_mode": "auto",
+    "resolved_mode": "committed",
+    "source": "default-auto",
+    "root": ".",
+    "git_root": ".",
+    "head": "ab146a6663c8e3e7719896b9091e99bdebdc5b12",
+    "candidate_count": 107,
+    "included_count": 28,
+    "excluded_untracked_count": 14,
+    "excluded_ignored_count": 3481,
+    "excluded_sensitive_count": 2,
+    "missing_committed_count": 0,
+    "warnings": [],
+    "recommendation": "Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder."
+  }
+}

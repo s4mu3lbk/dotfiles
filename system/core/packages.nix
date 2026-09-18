@@ -8,6 +8,7 @@
     p11-kit
     opensc
     pcsc-tools
+    web-eid-app
     nvtopPackages.intel
 
     # Core tools

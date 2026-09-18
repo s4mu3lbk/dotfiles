@@ -60,9 +60,19 @@
       opencode-desktop
       pixelflasher
       etcher
+      startrinity-cst
+
+      # SDR (HackRF)
+      gqrx
+      sdrpp
+      inspectrum
+      (gnuradio.override {
+        extraPackages = [ gnuradioPackages.osmosdr ]; # gr-osmosdr built with HackRF support
+      })
       claude-code
       statix
       deadnix
+      domterm
     ]
   );
 }

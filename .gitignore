@@ -40,3 +40,5 @@ session-*.md
 .graphify/worktree.json
 .graphify/needs_update
 .graphify/cache/
+packages/.graphify/
+packages/nvim/.graphify/

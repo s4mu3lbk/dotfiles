@@ -16,7 +16,10 @@ let
   # libssl.so.1.1 sonames. OpenSSL 1.1.1 is EOL (2023-09) — drop the
   # insecure marker; it is only exposed to this legacy binary.
   openssl11 = openssl_1_1.overrideAttrs (old: {
-    meta = old.meta // { insecure = false; };
+    meta = old.meta // {
+      insecure = false;
+      knownVulnerabilities = [ ];
+    };
   });
 in
 stdenv.mkDerivation rec {

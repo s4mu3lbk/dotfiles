@@ -3,7 +3,8 @@
   lib,
   username,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware.nix
 
@@ -13,6 +14,7 @@
     # Hardware
     ../../system/hardware/asus.nix
     ../../system/hardware/power.nix
+    ../../system/hardware/hackrf.nix
 
     # Desktop environments
     ../../system/de/kde.nix
@@ -43,6 +45,8 @@
 
   power.enable = true;
 
+  hackrf.enable = true;
+
   hardware.uinput.enable = true;
 
   users.users.${username} = {
@@ -68,7 +72,7 @@
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs username;};
+    extraSpecialArgs = { inherit inputs username; };
     users.${username} = {
       home.username = username;
       home.homeDirectory = "/home/${username}";

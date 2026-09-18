@@ -22,7 +22,36 @@
   };
 
   # Needed for neovim mason binaries
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    # Runtime deps for unpatched Electron apps installed outside nixpkgs
+    # (e.g. terminal-browser from terminal-browser.sh)
+    libraries = with pkgs; [
+      alsa-lib
+      atk
+      at-spi2-atk
+      at-spi2-core
+      cairo
+      cups
+      dbus
+      expat
+      glib
+      gtk3
+      libX11
+      libXcomposite
+      libXdamage
+      libXext
+      libXfixes
+      libxcb
+      libxkbcommon
+      libXrandr
+      libgbm # libgbm.so.1 (split out of mesa in recent nixpkgs)
+      nspr
+      nss
+      pango
+      systemdLibs # libudev.so.1
+    ];
+  };
 
   # Shells
   programs.fish.enable = true;

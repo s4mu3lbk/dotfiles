@@ -2,11 +2,26 @@
 {pkgs, ...}: let
   monitor-graphics = pkgs.writeShellScriptBin "monitor-graphics"
     (builtins.readFile ../../scripts/monitor-graphics.sh);
+  webEidPolicy = builtins.toJSON {
+    ExtensionInstallForcelist = [
+      "ncibgoaomkmdpilpocfeponihegamlic" # Web eID extension
+    ];
+  };
 in {
   # Smart‑card (EstEID) — PKCS#11 module + daemon
   environment.etc."pkcs11/modules/opensc-pkcs11".text = ''
     module: ${pkgs.opensc}/lib/opensc-pkcs11.so
   '';
+
+  # Web eID — native messaging host + extension autoinstall (Chrome, Vivaldi)
+  environment.etc."opt/chrome/native-messaging-hosts/eu.webeid.json".source =
+    "${pkgs.web-eid-app}/etc/opt/chrome/native-messaging-hosts/eu.webeid.json";
+  # Vivaldi uses the shared Chromium NMH dir and its own policy dir
+  # (verified against vivaldi-bin strings)
+  environment.etc."chromium/native-messaging-hosts/eu.webeid.json".source =
+    "${pkgs.web-eid-app}/etc/chromium/native-messaging-hosts/eu.webeid.json";
+  environment.etc."opt/chrome/policies/managed/web-eid.json".text = webEidPolicy;
+  environment.etc."vivaldi/policies/managed/web-eid.json".text = webEidPolicy;
 
   services = {
     # Smart‑card daemon

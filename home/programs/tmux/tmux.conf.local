@@ -414,6 +414,11 @@ bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?
 # move status line to bottom
 set -g status-position bottom
 
+# give the command prompt (prefix + :) and status messages their own row
+# instead of drawing them over the status line content (needs status 2)
+set -g status 2
+set -g message-line 1
+
 
 # -- tpm -----------------------------------------------------------------------
 

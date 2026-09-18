@@ -37,6 +37,7 @@
 , systemd
 , libnl
 , libcap_ng
+, nftables
 , dbus
 , iproute2
 , util-linux
@@ -44,11 +45,11 @@
 
 stdenv.mkDerivation rec {
   pname = "windscribe";
-  version = "2.23.12";
+  version = "2.24.13";
 
   src = fetchurl {
     url = "https://github.com/Windscribe/Desktop-App/releases/download/v${version}/windscribe_${version}_amd64.deb";
-    sha256 = "0bi35gq038qbazl79pn2gr1280znpjzl9g93aw12nijldr99h933";
+    sha256 = "148rrv5hmjq405sak45w1y2f79kxmglxmk1i5f6qx1bwrxzz3abr";
   };
 
   nativeBuildInputs = [
@@ -87,6 +88,7 @@ stdenv.mkDerivation rec {
     systemd
     libnl
     libcap_ng
+    nftables
     xcbutilcursor
     xcbutilwm
     xcbutilimage
@@ -148,6 +150,15 @@ stdenv.mkDerivation rec {
     echo '  posix_spawnp_func_t orig = (posix_spawnp_func_t)dlsym(RTLD_NEXT, "posix_spawnp");' >> fakesetgid.c
     echo '  if (argv && argv[0]) ((char**)argv)[0] = (char*)map_path(argv[0]);' >> fakesetgid.c
     echo '  return orig(pid, map_path(file), file_actions, attrp, argv, envp);' >> fakesetgid.c
+    echo '}' >> fakesetgid.c
+    # The helper does setenv("PATH", "/usr/sbin:/usr/bin:/sbin:/bin", 1) at startup, which
+    # wipes out the unit's Environment=PATH and leaves every shelled-out command (ip, grep,
+    # awk, busctl, ...) unfindable on NixOS. Ignore PATH overrides so the systemd PATH survives.
+    echo 'typedef int (*setenv_func_t)(const char*, const char*, int);' >> fakesetgid.c
+    echo 'int setenv(const char *name, const char *value, int overwrite) {' >> fakesetgid.c
+    echo '  if (name && strcmp(name, "PATH") == 0) return 0;' >> fakesetgid.c
+    echo '  setenv_func_t orig = (setenv_func_t)dlsym(RTLD_NEXT, "setenv");' >> fakesetgid.c
+    echo '  return orig(name, value, overwrite);' >> fakesetgid.c
     echo '}' >> fakesetgid.c
     $CC -shared -fPIC -ldl -o $out/lib/libfakesetgid.so fakesetgid.c
 

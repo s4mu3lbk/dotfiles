@@ -1,0 +1,118 @@
+{
+  "AGENTS.md": {
+    "mtime": 1788719352547.2378,
+    "hash": "46d66b31dc59f7dcf90f71457e78c4fd"
+  },
+  "README.md": {
+    "mtime": 1788256292309.4148,
+    "hash": "c78ecb5e78d640343834e066571e2cbb"
+  },
+  "packages/nvim/README.md": {
+    "mtime": 1775986860196.7063,
+    "hash": "1e417f06cc86f1c18383a6708a2228f0"
+  },
+  "packages/antigravity/antigravity.png": {
+    "mtime": 1779478366763.7065,
+    "hash": "631535811c805d71025717b4fa421c4d"
+  },
+  "Screencast_20260416_211634.webm": {
+    "mtime": 1776363400371.8723,
+    "hash": "06ad01451eb70c0dc18e8020be3fdfbf"
+  },
+  "packages/nvim/init.lua": {
+    "mtime": 1775986860196.7063,
+    "hash": "d9646e1a180b5f6da5f8732fa974743d"
+  },
+  "packages/nvim/lua/config/autocmds.lua": {
+    "mtime": 1775986860197.257,
+    "hash": "80122fa612cbaf9410e958255de5c1fe"
+  },
+  "packages/nvim/lua/config/keymaps.lua": {
+    "mtime": 1775986860197.3257,
+    "hash": "ec456ed6946a3ffef4e6b85d7afa2530"
+  },
+  "packages/nvim/lua/config/lazy.lua": {
+    "mtime": 1775986860197.3257,
+    "hash": "2f890e3989fbeab461cc81b6d323b675"
+  },
+  "packages/nvim/lua/config/options.lua": {
+    "mtime": 1775986860197.3257,
+    "hash": "c461993eba7a304e138e6f63b1fc2cc9"
+  },
+  "packages/nvim/lua/plugins/example.lua": {
+    "mtime": 1779348954449.8167,
+    "hash": "a914c9f5f1c48fe3b1e45ebaca549f45"
+  },
+  "docs/superpowers/plans/2026-07-06-cosmic-monitor.md": {
+    "mtime": 1783296976623.0718,
+    "hash": "6c744ccba7526b83b868ad34d8da6ca8"
+  },
+  "docs/superpowers/specs/2026-07-06-cosmic-monitor-design.md": {
+    "mtime": 1783296886903.602,
+    "hash": "6a5ec460a561a5e1341e48c65225d66d"
+  },
+  "packages/nvim/lua/plugins/avante.lua": {
+    "mtime": 1779482817820.9993,
+    "hash": "eb9b5ae687769fd76e1f83ba35303def"
+  },
+  "packages/nvim/lua/plugins/dap.lua": {
+    "mtime": 1784466592341.7827,
+    "hash": "9e90e63b36414e7d1db62c6067aeb93e"
+  },
+  "packages/nvim/lua/plugins/git-conflict.lua": {
+    "mtime": 1779360793819.885,
+    "hash": "e75b82d0039d88293fd7e1e8bea296df"
+  },
+  "packages/nvim/lua/plugins/gitsigns.lua": {
+    "mtime": 1779360885619.7993,
+    "hash": "280099f417fb7eee3363dd9d38a33a42"
+  },
+  "packages/nvim/lua/plugins/mason.lua": {
+    "mtime": 1784463059592.3643,
+    "hash": "bf49eeb59ae9212f90ba3f061ebef14d"
+  },
+  "packages/nvim/lua/plugins/opencode.lua": {
+    "mtime": 1779562897892.7012,
+    "hash": "a3d2fee0b99faa179284d0a83e80aac1"
+  },
+  "packages/nvim/lua/plugins/render-markdown.lua": {
+    "mtime": 1779482803407.8,
+    "hash": "687f816fe754e23c6f2717408fc7587d"
+  },
+  "packages/nvim/lua/plugins/sidekick.lua": {
+    "mtime": 1789206792689.541,
+    "hash": "bf2e2e0eb50f48e1e708293db3767c77"
+  },
+  "packages/nvim/lua/plugins/snacks.lua": {
+    "mtime": 1784464186142.6433,
+    "hash": "86f2f02c14a77a04ed843231bf1e1bb9"
+  },
+  "packages/nvim/lua/plugins/surround.lua": {
+    "mtime": 1780686230860.5461,
+    "hash": "b651c19b158aeb2d916474e4bc6667cd"
+  },
+  "packages/nvim/lua/plugins/telescope.lua": {
+    "mtime": 1779380921392.0024,
+    "hash": "261496f4a57814f95eba88f153bd0e8f"
+  },
+  "packages/nvim/lua/plugins/test.lua": {
+    "mtime": 1784466408035.4841,
+    "hash": "66d761134fdd7b0b1815adac4943c7ce"
+  },
+  "packages/nvim/lua/plugins/treesitter.lua": {
+    "mtime": 1784464102104.8872,
+    "hash": "10f2a2bac0fe6daeb539453240f6ff76"
+  },
+  "packages/nvim/lua/plugins/which-key.lua": {
+    "mtime": 1780687736019.815,
+    "hash": "63edbb0ee0a86da877576872fd04c81a"
+  },
+  "docs/superpowers/plans/2026-09-17-windscribe-server-vpn.md": {
+    "mtime": 1789641800888.6003,
+    "hash": "b8f48ef2357fe4a8d7fca2c0c1f1df7b"
+  },
+  "docs/superpowers/specs/2026-09-17-windscribe-server-vpn-design.md": {
+    "mtime": 1789641049013.1528,
+    "hash": "b29df147f15166f7998603e27dbc98ff"
+  }
+}

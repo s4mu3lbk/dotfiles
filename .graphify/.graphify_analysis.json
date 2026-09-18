@@ -1,0 +1,171 @@
+{
+  "communities": {
+    "0": [
+      "age_encryption",
+      "agents_md",
+      "custom_packages",
+      "graphify_rules",
+      "nixos_dotfiles",
+      "scripts",
+      "sops_nix",
+      "systemd_boot"
+    ],
+    "1": [
+      "firefox_esr",
+      "fish_shell",
+      "ghostty",
+      "home_manager",
+      "nushell",
+      "qutebrowser",
+      "tmux",
+      "vivaldi"
+    ],
+    "2": [
+      "asus_zenbook",
+      "flake_config",
+      "kde_plasma",
+      "nixos_system",
+      "system_modules"
+    ],
+    "3": [
+      "lazyvim",
+      "neovim"
+    ],
+    "4": [
+      "hyprland"
+    ]
+  },
+  "cohesion": {
+    "0": 0.25,
+    "1": 0.25,
+    "2": 0.4,
+    "3": 1,
+    "4": 1
+  },
+  "gods": [
+    {
+      "id": "home_manager",
+      "label": "Home Manager",
+      "edges": 9,
+      "degree": 9
+    },
+    {
+      "id": "nixos_dotfiles",
+      "label": "NixOS Dotfiles",
+      "edges": 6,
+      "degree": 6
+    },
+    {
+      "id": "nixos_system",
+      "label": "NixOS System Configuration",
+      "edges": 4,
+      "degree": 4
+    },
+    {
+      "id": "flake_config",
+      "label": "Flake Configuration",
+      "edges": 3,
+      "degree": 3
+    },
+    {
+      "id": "sops_nix",
+      "label": "sops-nix Secrets",
+      "edges": 2,
+      "degree": 2
+    },
+    {
+      "id": "neovim",
+      "label": "Neovim",
+      "edges": 2,
+      "degree": 2
+    },
+    {
+      "id": "agents_md",
+      "label": "Agent Instructions",
+      "edges": 2,
+      "degree": 2
+    },
+    {
+      "id": "kde_plasma",
+      "label": "KDE Plasma 6",
+      "edges": 1,
+      "degree": 1
+    },
+    {
+      "id": "fish_shell",
+      "label": "Fish Shell",
+      "edges": 1,
+      "degree": 1
+    },
+    {
+      "id": "nushell",
+      "label": "Nushell",
+      "edges": 1,
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "NixOS Dotfiles",
+      "target": "Systemd Boot Analysis",
+      "source_files": [
+        "README.md",
+        "blame.html"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "includes",
+      "why": "connects across different repos/directories; peripheral node `Systemd Boot Analysis` unexpectedly reaches hub `NixOS Dotfiles`"
+    },
+    {
+      "source": "NixOS Dotfiles",
+      "target": "Agent Instructions",
+      "source_files": [
+        "README.md",
+        "AGENTS.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "documented_by",
+      "why": "connects across different repos/directories; peripheral node `Agent Instructions` unexpectedly reaches hub `NixOS Dotfiles`"
+    },
+    {
+      "source": "Neovim",
+      "target": "LazyVim",
+      "source_files": [
+        "README.md",
+        "packages/nvim/README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "based_on",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "labels": {
+    "0": "Community 0",
+    "1": "Community 1",
+    "2": "Community 2",
+    "3": "Community 3",
+    "4": "Community 4"
+  },
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Flake Configuration` connect `Community 2` to `Community 0`, `Community 1`?",
+      "why": "High betweenness centrality (0.601) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Home Manager` connect `Community 1` to `Community 2`, `Community 3`?",
+      "why": "High betweenness centrality (0.601) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `NixOS Dotfiles` connect `Community 0` to `Community 2`?",
+      "why": "High betweenness centrality (0.490) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `KDE Plasma 6`, `Hyprland`, `Fish Shell` to the rest of the system?",
+      "why": "17 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

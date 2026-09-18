@@ -40,6 +40,8 @@
     fastfetch
     statix
     deadnix
+    kimi-cli
+    opencode
   ];
 
   home = {

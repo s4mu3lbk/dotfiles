@@ -13,7 +13,7 @@ Welcome to `samuel`'s NixOS dotfiles repository!
 - **Home Manager Configuration**: The Home Manager module is integrated directly into the NixOS flake in `flake.nix` under the `homeConfigurations` target for `samuel` (`.#samuel`).
 - **Language**: The project heavily utilizes the Nix language. When making configurations, prefer native Nix or NixOS/Home Manager options.
 - **Secrets**: API keys and sensitive data are managed via [sops-nix](https://github.com/Mic92/sops-nix). See `home/secrets.nix` and `secrets/secrets.yaml`. Never hardcode secrets in Nix files.
-- **Private Modules**: VPN config, work infrastructure, and other non-public modules live in a separate local-only flake at `/home/samuel/nixos-private` (flake input `nixos-private`, `git+file://`). Keep sensitive config there — never in this repo.
+- **Private Modules**: VPN config, work infrastructure, and other non-public modules live in a private GitHub repo at `git@github.com:s4mu3lbk/dotfiles-private.git` (flake input `nixos-private`, `git+ssh://`; local checkout at `/home/samuel/nixos-private`). Keep sensitive config there — never in this repo.
 - **Rebuilding System**: Typically, NixOS settings are applied via a rebuild command, e.g., using `sudo nixos-rebuild switch --flake .#nixos`.
 
 ## Project Structure
@@ -54,6 +54,7 @@ packages/                      # Custom derivations exposed via overlays
 ├── carbonyl/
 ├── etcher/
 ├── nvim/                      # Custom neovim wrapper + lua config
+├── startrinity-cst/           # StarTrinity Continuous Speed Test (unfree binary)
 └── tradingview/
 
 scripts/                       # Utility scripts (nushell) + default.nix derivation builder

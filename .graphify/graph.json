@@ -1,0 +1,716 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "community_labels": {
+      "0": "Community 0",
+      "1": "Community 1",
+      "2": "Community 2",
+      "3": "Community 3",
+      "4": "Community 4",
+      "5": "Community 5",
+      "6": "Community 6",
+      "7": "Community 7",
+      "8": "Community 8",
+      "9": "Community 9",
+      "10": "Community 10",
+      "11": "Community 11",
+      "12": "Community 12",
+      "13": "Community 13",
+      "14": "Community 14",
+      "15": "Community 15",
+      "16": "Community 16",
+      "17": "Community 17",
+      "18": "Community 18",
+      "19": "Community 19",
+      "20": "Community 20",
+      "21": "Community 21",
+      "22": "Community 22",
+      "23": "Community 23",
+      "24": "Community 24"
+    },
+    "built_from_commit": "ab146a6663c8e3e7719896b9091e99bdebdc5b12"
+  },
+  "topology_signature": "n=44;e=22;age_encryption,agents_md,asus_zenbook,config_autocmds,config_keymaps,config_lazy,config_options,custom_packages,firefox_esr,fish_shell,flake_config,ghostty,graphify_rules,home_manager,hyprland,init,kde_plasma,lazyvim,neovim,nixos_dotfiles,nixos_system,nushell,plugins_avante,plugins_dap,plugins_example,plugins_git_conflict,plugins_gitsigns,plugins_mason,plugins_opencode,plugins_render_markdown,plugins_sidekick,plugins_snacks,plugins_surround,plugins_telescope,plugins_test,plugins_treesitter,plugins_which_key,qutebrowser,scripts,sops_nix,system_modules,systemd_boot,tmux,vivaldi|age_encryption\tsops_nix\tuses;agents_md\tgraphify_rules\tincludes;agents_md\tnixos_dotfiles\tdocumented_by;asus_zenbook\tnixos_system\ttargets;custom_packages\tnixos_dotfiles\tincludes;firefox_esr\thome_manager\tconfigures;fish_shell\thome_manager\tconfigures;flake_config\thome_manager\tincludes;flake_config\tnixos_dotfiles\tconfigures;flake_config\tnixos_system\tincludes;ghostty\thome_manager\tconfigures;home_manager\tneovim\tconfigures;home_manager\tnushell\tconfigures;home_manager\tqutebrowser\tconfigures;home_manager\ttmux\tconfigures;home_manager\tvivaldi\tconfigures;kde_plasma\tnixos_system\tincludes;lazyvim\tneovim\tbased_on;nixos_dotfiles\tscripts\tincludes;nixos_dotfiles\tsops_nix\tuses;nixos_dotfiles\tsystemd_boot\tincludes;nixos_system\tsystem_modules\tincludes",
+  "nodes": [
+    {
+      "id": "init",
+      "label": "init.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/init.lua",
+      "source_location": "L1",
+      "community": 9,
+      "community_name": "Community 9"
+    },
+    {
+      "id": "config_autocmds",
+      "label": "autocmds.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/config/autocmds.lua",
+      "source_location": "L1",
+      "community": 4,
+      "community_name": "Community 4"
+    },
+    {
+      "id": "config_keymaps",
+      "label": "keymaps.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/config/keymaps.lua",
+      "source_location": "L1",
+      "community": 5,
+      "community_name": "Community 5"
+    },
+    {
+      "id": "config_lazy",
+      "label": "lazy.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/config/lazy.lua",
+      "source_location": "L1",
+      "community": 6,
+      "community_name": "Community 6"
+    },
+    {
+      "id": "config_options",
+      "label": "options.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/config/options.lua",
+      "source_location": "L1",
+      "community": 7,
+      "community_name": "Community 7"
+    },
+    {
+      "id": "plugins_avante",
+      "label": "avante.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/avante.lua",
+      "source_location": "L1",
+      "community": 10,
+      "community_name": "Community 10"
+    },
+    {
+      "id": "plugins_dap",
+      "label": "dap.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/dap.lua",
+      "source_location": "L1",
+      "community": 11,
+      "community_name": "Community 11"
+    },
+    {
+      "id": "plugins_example",
+      "label": "example.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/example.lua",
+      "source_location": "L1",
+      "community": 12,
+      "community_name": "Community 12"
+    },
+    {
+      "id": "plugins_git_conflict",
+      "label": "git-conflict.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/git-conflict.lua",
+      "source_location": "L1",
+      "community": 13,
+      "community_name": "Community 13"
+    },
+    {
+      "id": "plugins_gitsigns",
+      "label": "gitsigns.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/gitsigns.lua",
+      "source_location": "L1",
+      "community": 14,
+      "community_name": "Community 14"
+    },
+    {
+      "id": "plugins_mason",
+      "label": "mason.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/mason.lua",
+      "source_location": "L1",
+      "community": 15,
+      "community_name": "Community 15"
+    },
+    {
+      "id": "plugins_opencode",
+      "label": "opencode.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/opencode.lua",
+      "source_location": "L1",
+      "community": 16,
+      "community_name": "Community 16"
+    },
+    {
+      "id": "plugins_render_markdown",
+      "label": "render-markdown.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/render-markdown.lua",
+      "source_location": "L1",
+      "community": 17,
+      "community_name": "Community 17"
+    },
+    {
+      "id": "plugins_sidekick",
+      "label": "sidekick.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/sidekick.lua",
+      "source_location": "L1",
+      "community": 18,
+      "community_name": "Community 18"
+    },
+    {
+      "id": "plugins_snacks",
+      "label": "snacks.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/snacks.lua",
+      "source_location": "L1",
+      "community": 19,
+      "community_name": "Community 19"
+    },
+    {
+      "id": "plugins_surround",
+      "label": "surround.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/surround.lua",
+      "source_location": "L1",
+      "community": 20,
+      "community_name": "Community 20"
+    },
+    {
+      "id": "plugins_telescope",
+      "label": "telescope.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/telescope.lua",
+      "source_location": "L1",
+      "community": 21,
+      "community_name": "Community 21"
+    },
+    {
+      "id": "plugins_test",
+      "label": "test.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/test.lua",
+      "source_location": "L1",
+      "community": 22,
+      "community_name": "Community 22"
+    },
+    {
+      "id": "plugins_treesitter",
+      "label": "treesitter.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/treesitter.lua",
+      "source_location": "L1",
+      "community": 23,
+      "community_name": "Community 23"
+    },
+    {
+      "id": "plugins_which_key",
+      "label": "which-key.lua",
+      "file_type": "code",
+      "source_file": "packages/nvim/lua/plugins/which-key.lua",
+      "source_location": "L1",
+      "community": 24,
+      "community_name": "Community 24"
+    },
+    {
+      "id": "nixos_dotfiles",
+      "label": "NixOS Dotfiles",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "flake_config",
+      "label": "Flake Configuration",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "flake.nix",
+      "community": 2,
+      "community_name": "Community 2"
+    },
+    {
+      "id": "home_manager",
+      "label": "Home Manager",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "nixos_system",
+      "label": "NixOS System Configuration",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "system/",
+      "community": 2,
+      "community_name": "Community 2"
+    },
+    {
+      "id": "sops_nix",
+      "label": "sops-nix Secrets",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "secrets/",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "kde_plasma",
+      "label": "KDE Plasma 6",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "system/de/kde.nix",
+      "community": 2,
+      "community_name": "Community 2"
+    },
+    {
+      "id": "hyprland",
+      "label": "Hyprland",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "system/de/",
+      "community": 8,
+      "community_name": "Community 8"
+    },
+    {
+      "id": "fish_shell",
+      "label": "Fish Shell",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/shell/",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "nushell",
+      "label": "Nushell",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/shell/",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "ghostty",
+      "label": "Ghostty Terminal",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/programs/",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "tmux",
+      "label": "Tmux",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/programs/",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "neovim",
+      "label": "Neovim",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "packages/nvim/",
+      "community": 3,
+      "community_name": "Community 3"
+    },
+    {
+      "id": "lazyvim",
+      "label": "LazyVim",
+      "file_type": "concept",
+      "source_file": "packages/nvim/README.md",
+      "source_location": "packages/nvim/",
+      "community": 3,
+      "community_name": "Community 3"
+    },
+    {
+      "id": "vivaldi",
+      "label": "Vivaldi Browser",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/programs/browser.nix",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "firefox_esr",
+      "label": "Firefox ESR",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/programs/browser.nix",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "qutebrowser",
+      "label": "Qutebrowser",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "home/programs/browser.nix",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "asus_zenbook",
+      "label": "ASUS Zenbook",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "hosts/default/hardware.nix",
+      "community": 2,
+      "community_name": "Community 2"
+    },
+    {
+      "id": "system_modules",
+      "label": "System Modules",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "system/",
+      "community": 2,
+      "community_name": "Community 2"
+    },
+    {
+      "id": "custom_packages",
+      "label": "Custom Package Overlays",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "packages/",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "scripts",
+      "label": "Nushell Scripts",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "scripts/",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "systemd_boot",
+      "label": "Systemd Boot Analysis",
+      "file_type": "concept",
+      "source_file": "blame.html",
+      "source_location": "blame.html",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "age_encryption",
+      "label": "Age Encryption",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": ".sops.yaml",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "agents_md",
+      "label": "Agent Instructions",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "AGENTS.md",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "graphify_rules",
+      "label": "Graphify Rules",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "source_location": "AGENTS.md",
+      "community": 0,
+      "community_name": "Community 0"
+    }
+  ],
+  "links": [
+    {
+      "source": "nixos_dotfiles",
+      "target": "flake_config",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "flake_config"
+    },
+    {
+      "source": "flake_config",
+      "target": "home_manager",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "flake_config",
+      "_tgt": "home_manager"
+    },
+    {
+      "source": "flake_config",
+      "target": "nixos_system",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "flake_config",
+      "_tgt": "nixos_system"
+    },
+    {
+      "source": "nixos_dotfiles",
+      "target": "sops_nix",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "sops_nix"
+    },
+    {
+      "source": "nixos_system",
+      "target": "kde_plasma",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_system",
+      "_tgt": "kde_plasma"
+    },
+    {
+      "source": "home_manager",
+      "target": "fish_shell",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "fish_shell"
+    },
+    {
+      "source": "home_manager",
+      "target": "nushell",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "nushell"
+    },
+    {
+      "source": "home_manager",
+      "target": "ghostty",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "ghostty"
+    },
+    {
+      "source": "home_manager",
+      "target": "tmux",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "tmux"
+    },
+    {
+      "source": "home_manager",
+      "target": "neovim",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "neovim"
+    },
+    {
+      "source": "neovim",
+      "target": "lazyvim",
+      "relation": "based_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "packages/nvim/README.md",
+      "weight": 1,
+      "_src": "neovim",
+      "_tgt": "lazyvim"
+    },
+    {
+      "source": "home_manager",
+      "target": "vivaldi",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "vivaldi"
+    },
+    {
+      "source": "home_manager",
+      "target": "firefox_esr",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "firefox_esr"
+    },
+    {
+      "source": "home_manager",
+      "target": "qutebrowser",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "home_manager",
+      "_tgt": "qutebrowser"
+    },
+    {
+      "source": "nixos_system",
+      "target": "asus_zenbook",
+      "relation": "targets",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_system",
+      "_tgt": "asus_zenbook"
+    },
+    {
+      "source": "nixos_system",
+      "target": "system_modules",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_system",
+      "_tgt": "system_modules"
+    },
+    {
+      "source": "nixos_dotfiles",
+      "target": "custom_packages",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "custom_packages"
+    },
+    {
+      "source": "nixos_dotfiles",
+      "target": "scripts",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "scripts"
+    },
+    {
+      "source": "nixos_dotfiles",
+      "target": "systemd_boot",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "blame.html",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "systemd_boot"
+    },
+    {
+      "source": "sops_nix",
+      "target": "age_encryption",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "README.md",
+      "weight": 1,
+      "_src": "sops_nix",
+      "_tgt": "age_encryption"
+    },
+    {
+      "source": "nixos_dotfiles",
+      "target": "agents_md",
+      "relation": "documented_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "AGENTS.md",
+      "weight": 1,
+      "_src": "nixos_dotfiles",
+      "_tgt": "agents_md"
+    },
+    {
+      "source": "agents_md",
+      "target": "graphify_rules",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "AGENTS.md",
+      "weight": 1,
+      "_src": "agents_md",
+      "_tgt": "graphify_rules"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "desktop_environments",
+      "label": "Desktop Environments",
+      "nodes": [
+        "kde_plasma",
+        "hyprland"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md"
+    },
+    {
+      "id": "browsers",
+      "label": "Configured Browsers",
+      "nodes": [
+        "vivaldi",
+        "firefox_esr",
+        "qutebrowser"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md"
+    },
+    {
+      "id": "shells",
+      "label": "Configured Shells",
+      "nodes": [
+        "fish_shell",
+        "nushell"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md"
+    }
+  ]
+}

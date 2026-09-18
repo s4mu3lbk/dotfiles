@@ -322,11 +322,11 @@
         "rev": "b2f1c196e126fe4c5c38074dfb93045c98dd2100",
         "revCount": 6,
         "type": "git",
-        "url": "file:///home/samuel/nixos-private"
+        "url": "ssh://git@github.com/s4mu3lbk/dotfiles-private.git"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/samuel/nixos-private"
+        "url": "ssh://git@github.com/s4mu3lbk/dotfiles-private.git"
       }
     },
     "nixpkgs": {
@@ -531,16 +531,17 @@
         "systems": "systems"
       },
       "locked": {
-        "dirtyRev": "d92ae326bac1bf38cfe4d9d7b6bb10d3c1939bc5-dirty",
-        "dirtyShortRev": "d92ae32-dirty",
-        "lastModified": 1785492813,
-        "narHash": "sha256-JlrH9m8vHh2ObJ60NF7EjqVIoqZJbXgJwZXgy7YyuxY=",
+        "lastModified": 1789716278,
+        "narHash": "sha256-hpqIM1LDdUCWbyBX09ITKrFlTIPj9sco+JsW8dG4pvg=",
+        "ref": "refs/heads/main",
+        "rev": "7fa5e655d9a88812228434dc25794648dc109644",
+        "revCount": 113,
         "type": "git",
-        "url": "file:///home/samuel/Projects/self/viscus"
+        "url": "ssh://git@github.com/s4mu3lbk/viscus.git"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/samuel/Projects/self/viscus"
+        "url": "ssh://git@github.com/s4mu3lbk/viscus.git"
       }
     }
   },

@@ -3,11 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    viscus.url = "git+file:///home/samuel/Projects/self/viscus";
+    viscus.url = "git+ssh://git@github.com/s4mu3lbk/viscus.git";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    # Private modules (VPN, work infra) — local-only flake, not published
-    nixos-private.url = "git+file:///home/samuel/nixos-private";
+    # Private modules (VPN, work infra) — private GitHub repo
+    nixos-private.url = "git+ssh://git@github.com/s4mu3lbk/dotfiles-private.git";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";

@@ -27,11 +27,12 @@
     };
 
     # Patched cosmic-comp with wlr-gamma-control (night light) support.
+    # Fork: https://github.com/s4mu3lbk/cosmic-comp (master is 1 commit ahead of pop-os).
     # Local checkout at /home/samuel/Projects/self/cosmic-epoch/cosmic-comp.
-    # NOTE: git+file inputs only include tracked files and require a CLEAN tree —
-    # commit your changes there, then `nix flake lock --update-input cosmic-comp-patch`.
+    # After pushing new commits to the fork, run:
+    #   `nix flake lock --update-input cosmic-comp-patch`
     cosmic-comp-patch = {
-      url = "git+file:///home/samuel/Projects/self/cosmic-epoch/cosmic-comp";
+      url = "github:s4mu3lbk/cosmic-comp";
       flake = false;
     };
 

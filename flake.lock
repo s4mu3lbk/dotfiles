@@ -77,17 +77,17 @@
     "cosmic-comp-patch": {
       "flake": false,
       "locked": {
-        "lastModified": 1789955680,
-        "narHash": "sha256-3zct4f27zutdBRGRgtYV99Ad5uosI+27SONz3Fv7YHI=",
-        "ref": "refs/heads/master",
-        "rev": "1bd725ff6bb3c892a8d1ff429543386ce5c7e14d",
-        "revCount": 55,
-        "type": "git",
-        "url": "file:///home/samuel/Projects/self/cosmic-epoch/cosmic-comp"
+        "lastModified": 1790085699,
+        "narHash": "sha256-Rnw+2WQiffNFWxAwjeonSc6ucuz2V1+PHRB4zDxMtbE=",
+        "owner": "s4mu3lbk",
+        "repo": "cosmic-comp",
+        "rev": "1345fc3cc983ce20930e474085f7fca5447586ac",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/samuel/Projects/self/cosmic-epoch/cosmic-comp"
+        "owner": "s4mu3lbk",
+        "repo": "cosmic-comp",
+        "type": "github"
       }
     },
     "crate2nix": {

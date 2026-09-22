@@ -38,9 +38,12 @@
       COSMIC_DISABLE_DIRECT_SCANOUT = "1"; # Disable direct scanout for stability
       COSMIC_FORCE_SOFTWARE_CURSOR = "0"; # Keep hardware cursor enabled
     };
-    environment.systemPackages = lib.mkIf config.cosmic.monitor.enable (with pkgs; [
-      cosmic-monitor
-    ]);
+    environment.systemPackages =
+      (lib.optionals config.cosmic.monitor.enable (with pkgs; [
+        cosmic-monitor
+      ]))
+      # Night light client driving our patched cosmic-comp's wlr-gamma-control support
+      ++ [ pkgs.wlsunset ];
 
     services.system76-scheduler.enable = true;
     services.desktopManager.cosmic.enable = true;

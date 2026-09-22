@@ -1,9 +1,9 @@
-self: super: {
+{ inputs }: self: super: {
   binance = super.callPackage ./packages/binance { };
   tradingview = super.callPackage ./packages/tradingview { };
   carbonyl = super.callPackage ./packages/carbonyl { };
-  antigravity = super.callPackage ./packages/antigravity { };
-  antigravity-ide = super.callPackage ./packages/antigravity-ide { };
+  # antigravity = super.callPackage ./packages/antigravity { };
+  # antigravity-ide = super.callPackage ./packages/antigravity-ide { };
   windscribe = super.callPackage ./packages/windscribe { };
   kimi-cli = super.callPackage ./packages/kimi-cli { };
   opencode = super.callPackage ./packages/opencode { };
@@ -12,6 +12,47 @@ self: super: {
   etcher = super.callPackage ./packages/etcher { };
   startrinity-cst = super.callPackage ./packages/startrinity-cst { };
   domterm = super.callPackage ./packages/domterm { };
+
+  # SDRangel 7.27.1 (Qt 6.11) SIGSEGVs a few seconds after startup under Wayland:
+  # crash in QProgressDialog::setLabelText while LoadConfigurationFSM loads device
+  # set settings (COSMIC sets QT_QPA_PLATFORM=wayland;xcb, so Qt picks wayland).
+  # Forcing the xcb (XWayland) platform plugin works around it.
+  # --unset QT_XCB_GL_INTEGRATION: home.nix sets it to "none" globally (kde-connect
+  # workaround), which would leave SDRangel's QOpenGLWidgets (spectrum, waterfall)
+  # unable to create any GL context under xcb. GLX is available via XWayland.
+  sdrangel =
+    let
+      upstream = super.sdrangel;
+    in
+    super.runCommand "sdrangel-xcb" { nativeBuildInputs = [ super.makeWrapper ]; } ''
+      mkdir -p $out/bin
+      ln -s ${upstream}/lib $out/lib
+      ln -s ${upstream}/share $out/share
+      for b in ${upstream}/bin/*; do
+        name="$(basename "$b")"
+        if [ "$name" = "sdrangel" ]; then
+          makeWrapper "$b" "$out/bin/$name" --set QT_QPA_PLATFORM xcb --unset QT_XCB_GL_INTEGRATION
+        else
+          ln -s "$b" "$out/bin/$name"
+        fi
+      done
+    '';
+
+  # Local cosmic-comp with wlr-gamma-control-unstable-v1 support (night light / color shift).
+  # Source: /home/samuel/Projects/self/cosmic-epoch/cosmic-comp (master + gamma patch)
+  # NOTE: master's Cargo.lock has drifted from the epoch-1.8.0 tag, hence the vendored
+  #       deps override (cargoHash is fixed at buildRustPackage call time, so we replace
+  #       cargoDeps instead).
+  # Remember: commit changes in that repo, then `nix flake lock --update-input cosmic-comp-patch`.
+  cosmic-comp = super.cosmic-comp.overrideAttrs (oldAttrs: {
+    version = "1.8.0-gamma.1";
+    src = inputs.cosmic-comp-patch;
+    cargoDeps = super.rustPlatform.fetchCargoVendor {
+      name = "cosmic-comp-1.8.0-gamma.1-vendor";
+      src = inputs.cosmic-comp-patch;
+      hash = "sha256-WTpJuj3Xz9hHLj+kuhys0Fr8FmosAuXpbtNSK3Y5twU=";
+    };
+  });
 
   # Pin qdigidoc to latest upstream release (nixpkgs lags behind open-eid/DigiDoc4-Client)
   # libdigidocpp 4.5.0 is required by qdigidoc 4.11.0
@@ -33,10 +74,13 @@ self: super: {
         hash = "sha256-xre4cvrcr90krXcve2ZJxch+OqJ+pElScn6nPSxDWRg=";
       };
     in
-    super.qdigidoc.overrideAttrs (oldAttrs:
+    super.qdigidoc.overrideAttrs (
+      oldAttrs:
       let
         # Reuse nixpkgs' vendored eu-lotl.xml via the -DTSL_URL=file:// cmakeFlag
-        tslFlag = builtins.head (builtins.filter (f: super.lib.hasPrefix "-DTSL_URL=" f) oldAttrs.cmakeFlags);
+        tslFlag = builtins.head (
+          builtins.filter (f: super.lib.hasPrefix "-DTSL_URL=" f) oldAttrs.cmakeFlags
+        );
         eu-lotl = builtins.substring (builtins.stringLength "-DTSL_URL=file://") (-1) tslFlag;
       in
       rec {
@@ -58,20 +102,13 @@ self: super: {
           cp ${eu-lotl} client/eu-lotl.xml
           cp ${estonian-tsl} client/EE.xml
         '';
-      });
+      }
+    );
 
   python3 = super.python3.override {
     packageOverrides = pyself: pysuper: {
-      face-recognition-models = pysuper.face-recognition-models.overridePythonAttrs (oldAttrs: {
-        postPatch = (oldAttrs.postPatch or "") + ''
-          substituteInPlace face_recognition_models/__init__.py \
-            --replace-fail 'from pkg_resources import resource_filename' 'from importlib.resources import files' \
-            --replace-fail 'return resource_filename(__name__, "models/shape_predictor_68_face_landmarks.dat")' 'return str(files(__name__).joinpath("models/shape_predictor_68_face_landmarks.dat"))' \
-            --replace-fail 'return resource_filename(__name__, "models/shape_predictor_5_face_landmarks.dat")' 'return str(files(__name__).joinpath("models/shape_predictor_5_face_landmarks.dat"))' \
-            --replace-fail 'return resource_filename(__name__, "models/dlib_face_recognition_resnet_model_v1.dat")' 'return str(files(__name__).joinpath("models/dlib_face_recognition_resnet_model_v1.dat"))' \
-            --replace-fail 'return resource_filename(__name__, "models/mmod_human_face_detector.dat")' 'return str(files(__name__).joinpath("models/mmod_human_face_detector.dat"))'
-        '';
-      });
+      # nixpkgs' 0001-use-importlib-resources.patch already migrates
+      # face-recognition-models off pkg_resources; no override needed.
       opencv4Full = pysuper.opencv4Full.override { enableVtk = false; };
     };
   };

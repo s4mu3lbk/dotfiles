@@ -29,7 +29,7 @@
       "23": "Community 23",
       "24": "Community 24"
     },
-    "built_from_commit": "83449dafc74d13b356693f4f47d98498cc5186e0"
+    "built_from_commit": "7e3c0e049cb7a9c8973ddc84ac29138667b9a36b"
   },
   "topology_signature": "n=44;e=22;age_encryption,agents_md,asus_zenbook,config_autocmds,config_keymaps,config_lazy,config_options,custom_packages,firefox_esr,fish_shell,flake_config,ghostty,graphify_rules,home_manager,hyprland,init,kde_plasma,lazyvim,neovim,nixos_dotfiles,nixos_system,nushell,plugins_avante,plugins_dap,plugins_example,plugins_git_conflict,plugins_gitsigns,plugins_mason,plugins_opencode,plugins_render_markdown,plugins_sidekick,plugins_snacks,plugins_surround,plugins_telescope,plugins_test,plugins_treesitter,plugins_which_key,qutebrowser,scripts,sops_nix,system_modules,systemd_boot,tmux,vivaldi|age_encryption\tsops_nix\tuses;agents_md\tgraphify_rules\tincludes;agents_md\tnixos_dotfiles\tdocumented_by;asus_zenbook\tnixos_system\ttargets;custom_packages\tnixos_dotfiles\tincludes;firefox_esr\thome_manager\tconfigures;fish_shell\thome_manager\tconfigures;flake_config\thome_manager\tincludes;flake_config\tnixos_dotfiles\tconfigures;flake_config\tnixos_system\tincludes;ghostty\thome_manager\tconfigures;home_manager\tneovim\tconfigures;home_manager\tnushell\tconfigures;home_manager\tqutebrowser\tconfigures;home_manager\ttmux\tconfigures;home_manager\tvivaldi\tconfigures;kde_plasma\tnixos_system\tincludes;lazyvim\tneovim\tbased_on;nixos_dotfiles\tscripts\tincludes;nixos_dotfiles\tsops_nix\tuses;nixos_dotfiles\tsystemd_boot\tincludes;nixos_system\tsystem_modules\tincludes",
   "nodes": [

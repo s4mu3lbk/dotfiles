@@ -41,11 +41,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "balena-etcher";
-  version = "2.1.6";
+  version = "2.1.7";
 
   src = fetchurl {
     url = "https://github.com/balena-io/etcher/releases/download/v${version}/balena-etcher_${version}_amd64.deb";
-    hash = "sha256-K967Rsn3UKmr8RwYj/aaQFtKT+0RQzPWNMOz/lmmQFc=";
+    hash = "sha256-nb6mFl3e4ewfG3o4/pLw0sVMYhdxBDinr2dSwmfRk5U=";
   };
 
   nativeBuildInputs = [

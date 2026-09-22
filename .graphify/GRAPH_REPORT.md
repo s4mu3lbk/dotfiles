@@ -1,4 +1,4 @@
-# Graph Report - .  (2026-09-18)
+# Graph Report - .  (2026-09-22)
 
 ## Corpus Check
 - Corpus is ~17,274 words - fits in a single context window. You may not need a graph.
@@ -14,11 +14,11 @@
 - Requested: auto
 - Resolved: committed (source: default-auto)
 - Included files: 34 · Candidates: 122
-- Excluded: 0 untracked · 3509 ignored · 2 sensitive · 0 missing committed
+- Excluded: 2 untracked · 3512 ignored · 2 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `83449da`
+- Built from Git commit: `7e3c0e0`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `Home Manager` - 9 edges

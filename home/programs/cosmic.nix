@@ -95,6 +95,14 @@
             ],
             key: "v",
         ): Spawn("viscus trigger"),
+        // Kimi Work launcher: the keyboard "Copilot" key is not a real keycode —
+        // the firmware sends a chord. Verified via evtest on this machine
+        // (2026-09-21): KEY_LEFTMETA + KEY_LEFTSHIFT + KEY_F23. COSMIC matches
+        // modifiers exactly. The app's socket trigger dedups autorepeat (500ms).
+        (
+            modifiers: [Super, Shift],
+            key: "F23",
+        ): Spawn("kimi-work-summon"),
     }
   '';
 }

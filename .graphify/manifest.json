@@ -1,6 +1,6 @@
 {
   "AGENTS.md": {
-    "mtime": 1789716349564.9473,
+    "mtime": 1789972685880.0933,
     "hash": "3406947e589a9ab9866695447cd01d43"
   },
   "README.md": {
@@ -116,8 +116,8 @@
     "hash": "d42f09a0197d5a32ea6a5a625a967783"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1789647995280.8716,
-    "hash": "4f9228e90266e53cd83ddcf07fc0fc39"
+    "mtime": 1789987069167.4739,
+    "hash": "0d0c59ce0a6735b19227850ba6060982"
   },
   ".graphify/graph.html": {
     "mtime": 1783283844620.2156,
@@ -128,7 +128,7 @@
     "hash": "c586b2a9d8ebf1233908eec38f48f1d1"
   },
   "docs/superpowers/plans/2026-09-18-windscribe-cli-server.md": {
-    "mtime": 1789736128539.9182,
+    "mtime": 1789737254955.8367,
     "hash": "2d58a9409eeedd4be18d319e4df3eded"
   },
   "docs/superpowers/specs/2026-07-08-automated-package-updates-design.md": {
@@ -136,7 +136,7 @@
     "hash": "ef2608b127fe7f144c73e320365b1f87"
   },
   "docs/superpowers/specs/2026-09-18-windscribe-cli-server-design.md": {
-    "mtime": 1789735973480.0327,
+    "mtime": 1789737254951.4055,
     "hash": "bd9e692b239fe043a244520b1784c060"
   }
 }

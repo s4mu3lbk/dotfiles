@@ -5,7 +5,7 @@
   autoPatchelfHook,
   makeWrapper,
   openssl,
-  openssl_1_1,
+  perl,
   krb5,
   lttng-ust,
   zlib,
@@ -13,13 +13,33 @@
 
 let
   # The bundled .NET 5 crypto shim predates OpenSSL 3 and only probes
-  # libssl.so.1.1 sonames. OpenSSL 1.1.1 is EOL (2023-09) — drop the
-  # insecure marker; it is only exposed to this legacy binary.
-  openssl11 = openssl_1_1.overrideAttrs (old: {
-    meta = old.meta // {
-      insecure = false;
-      knownVulnerabilities = [ ];
+  # libssl.so.1.1 sonames. openssl_1_1 was removed from nixpkgs (EOL
+  # 2023-09), so 1.1.1w is built here; it is only exposed to this legacy binary.
+  openssl11 = stdenv.mkDerivation (finalAttrs: {
+    pname = "openssl";
+    version = "1.1.1w";
+
+    src = fetchurl {
+      url = "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-${finalAttrs.version}.tar.gz";
+      hash = "sha256-zzCYlQy02FOtlcCEHx+cbT3BAtzPys1SHZOSUgi3asg=";
     };
+
+    nativeBuildInputs = [ perl ];
+
+    configureScript = "./Configure";
+    dontAddPrefix = true;
+    configureFlags = [
+      "linux-x86_64"
+      "shared"
+      "--prefix=${builtins.placeholder "out"}"
+      "--openssldir=${builtins.placeholder "out"}/etc/ssl"
+    ];
+
+    # Only the runtime libraries are needed (libssl.so.1.1 / libcrypto.so.1.1)
+    makeFlags = [ "build_libs" ];
+    installTargets = "install_runtime_libs";
+
+    enableParallelBuilding = true;
   });
 in
 stdenv.mkDerivation rec {

@@ -34,6 +34,16 @@
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.keyFile = "/home/samuel/.config/sops/age/keys.txt";
 
+  # Swap — Nix builds (especially parallel C++ jobs) can exceed RAM;
+  # a 16 GiB swapfile (ext4) keeps the machine alive under memory pressure.
+  # Server-specific; the laptop uses its swap partition (see its hardware.nix).
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024; # MiB
+    }
+  ];
+
   # Keep replies to physical-interface inbound traffic (SSH) on the physical
   # interface while the Windscribe helper owns the default route. Harmless
   # when no VPN is up; || true tolerates the rule already existing (e.g. the

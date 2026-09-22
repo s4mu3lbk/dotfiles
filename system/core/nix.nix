@@ -13,6 +13,11 @@
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     auto-optimise-store = true;
+    # Bound build parallelism — 12 jobs on 12 threads OOM'd this 16GB host
+    # (kernel oom-killer killed nix during nixos-rebuild switch, 2026-09-22).
+    # swap.nix is the backstop; these caps lower peak memory in the first place.
+    max-jobs = 4;
+    cores = 4;
   };
 
   nix.gc = {

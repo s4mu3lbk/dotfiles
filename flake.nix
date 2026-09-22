@@ -25,6 +25,23 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Patched cosmic-comp with wlr-gamma-control (night light) support.
+    # Local checkout at /home/samuel/Projects/self/cosmic-epoch/cosmic-comp.
+    # NOTE: git+file inputs only include tracked files and require a CLEAN tree —
+    # commit your changes there, then `nix flake lock --update-input cosmic-comp-patch`.
+    cosmic-comp-patch = {
+      url = "git+file:///home/samuel/Projects/self/cosmic-epoch/cosmic-comp";
+      flake = false;
+    };
+
+    # Local Linux port of the Kimi desktop app (Kimi Work).
+    # Local checkout at /home/samuel/Projects/self/kimi-work.
+    # NOTE: git+file inputs only include tracked files and require a CLEAN tree —
+    # commit your changes there, then `nix flake lock --update-input kimi-work`.
+    kimi-work = {
+      url = "git+file:///home/samuel/Projects/self/kimi-work";
+    };
   };
 
   outputs =
@@ -48,7 +65,7 @@
             { networking.hostName = "nixos"; }
             {
               nixpkgs.overlays = [
-                (import ./overlays.nix)
+                (import ./overlays.nix { inherit inputs; })
               ];
             }
           ];
@@ -65,7 +82,7 @@
             { networking.hostName = "server"; }
             {
               nixpkgs.overlays = [
-                (import ./overlays.nix)
+                (import ./overlays.nix { inherit inputs; })
               ];
             }
           ];
@@ -78,7 +95,7 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
             overlays = [
-              (import ./overlays.nix)
+              (import ./overlays.nix { inherit inputs; })
             ];
           };
           extraSpecialArgs = { inherit inputs username; };

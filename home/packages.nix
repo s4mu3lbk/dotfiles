@@ -1,4 +1,24 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }:
+let
+  # Removed from nixpkgs (upstream archived); vendored from the last commit
+  fasd = pkgs.stdenvNoCC.mkDerivation {
+    pname = "fasd";
+    version = "1.0.1";
+    src = pkgs.fetchFromGitHub {
+      owner = "clvv";
+      repo = "fasd";
+      rev = "90b531a5daaa545c74c7d98974b54cbdb92659fc";
+      hash = "sha256-ITDZH7K+PvSlj6eX8lR+6PqWxSHs/L74vs3GgWHFQkQ=";
+    };
+    installPhase = ''
+      runHook preInstall
+      install -Dm755 fasd $out/bin/fasd
+      install -Dm644 fasd.1 $out/share/man/man1/fasd.1
+      runHook postInstall
+    '';
+  };
+in
+{
   home.packages = pkgs.lib.flatten (
     with pkgs;
     [
@@ -19,8 +39,8 @@
       tldr
       tor-browser
       bruno
-      antigravity
-      antigravity-ide
+      # antigravity
+      # antigravity-ide
       bashInteractive
       fastfetch
       ghostty
@@ -58,6 +78,9 @@
       kimi-cli
       opencode
       opencode-desktop
+      # Kimi Work desktop app — local Linux port living outside nixpkgs
+      # (flake input `kimi-work`; commit changes there, then refresh the lock)
+      inputs.kimi-work.packages.${pkgs.stdenv.hostPlatform.system}.kimi-work
       pixelflasher
       etcher
       startrinity-cst
@@ -65,6 +88,7 @@
       # SDR (HackRF)
       gqrx
       sdrpp
+      sdrangel
       inspectrum
       (gnuradio.override {
         extraPackages = [ gnuradioPackages.osmosdr ]; # gr-osmosdr built with HackRF support

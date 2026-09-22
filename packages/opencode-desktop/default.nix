@@ -38,11 +38,11 @@
 
 stdenv.mkDerivation rec {
   pname = "opencode-desktop";
-  version = "1.18.16";
+  version = "2.0.11";
 
   src = fetchurl {
     url = "https://opencode.ai/download/stable/linux-x64-deb";
-    hash = "sha256-aBJtK6rFScttM5ahWyLttF+LvLa5K9bxOi/XK+I5n4I=";
+    hash = "sha256-y98LLRZI+nJacZc8Hlp6QNnvu0lfmEdOzd2mhqi/dC8=";
   };
 
   nativeBuildInputs = [

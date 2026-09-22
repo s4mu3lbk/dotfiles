@@ -44,6 +44,7 @@
       libXfixes
       libxcb
       libxkbcommon
+      libglvnd # libGL.so.1, libEGL.so.1
       libXrandr
       libgbm # libgbm.so.1 (split out of mesa in recent nixpkgs)
       nspr

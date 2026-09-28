@@ -44,15 +44,15 @@
   #       deps override (cargoHash is fixed at buildRustPackage call time, so we replace
   #       cargoDeps instead).
   # Remember: commit changes in that repo, then `nix flake lock --update-input cosmic-comp-patch`.
-  cosmic-comp = super.cosmic-comp.overrideAttrs (oldAttrs: {
-    version = "1.8.0-gamma.1";
-    src = inputs.cosmic-comp-patch;
-    cargoDeps = super.rustPlatform.fetchCargoVendor {
-      name = "cosmic-comp-1.8.0-gamma.1-vendor";
-      src = inputs.cosmic-comp-patch;
-      hash = "sha256-WTpJuj3Xz9hHLj+kuhys0Fr8FmosAuXpbtNSK3Y5twU=";
-    };
-  });
+  #cosmic-comp = super.cosmic-comp.overrideAttrs (oldAttrs: {
+  #  version = "1.8.0-gamma.1";
+  #  src = inputs.cosmic-comp-patch;
+  #  cargoDeps = super.rustPlatform.fetchCargoVendor {
+  #    name = "cosmic-comp-1.8.0-gamma.1-vendor";
+  #    src = inputs.cosmic-comp-patch;
+  #    hash = "sha256-WTpJuj3Xz9hHLj+kuhys0Fr8FmosAuXpbtNSK3Y5twU=";
+  #  };
+  #});
 
   # Pin qdigidoc to latest upstream release (nixpkgs lags behind open-eid/DigiDoc4-Client)
   # libdigidocpp 4.5.0 is required by qdigidoc 4.11.0
@@ -115,5 +115,21 @@
 
   gdal = super.gdal.overrideAttrs (oldAttrs: {
     disabledTests = (oldAttrs.disabledTests or [ ]) ++ [ "test_zarr_read_simple_sharding" ];
+  });
+
+  # nodejs-slim 26.9.0 fails test-fs-cp-async-file-modes in the Nix sandbox
+  # (reproducible on Hydra: NixOS/nixpkgs#564449). pnpm and vue-language-server
+  # pin nodejs-slim_26, which drags the broken build into the nvim closure.
+  # Add the test to nixpkgs' existing CI_SKIP_TESTS skip list. Upstream already
+  # bumped nodejs_26 to 26.10.0 (f1b00de6c1bd, 2026-09-22); drop this override
+  # once nixos-unstable ships nodejs-slim > 26.9.0 and the pin is updated.
+  nodejs-slim_26 = super.nodejs-slim_26.overrideAttrs (oldAttrs: {
+    checkFlags = map (
+      f:
+      if super.lib.hasPrefix "CI_SKIP_TESTS=" f then
+        f + ",test-fs-cp-async-file-modes"
+      else
+        f
+    ) oldAttrs.checkFlags;
   });
 }

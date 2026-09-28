@@ -26,6 +26,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Weekly prebuilt nix-index database. Using it avoids a local full-nixpkgs
+    # eval, which fails whenever any single attribute (e.g. alias-only ones
+    # like cudatoolkit) does not evaluate — see nix-index issue class.
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Patched cosmic-comp with wlr-gamma-control (night light) support.
     # Fork: https://github.com/s4mu3lbk/cosmic-comp (master is 1 commit ahead of pop-os).
     # Local checkout at /home/samuel/Projects/self/cosmic-epoch/cosmic-comp.
@@ -40,9 +48,9 @@
     # Local checkout at /home/samuel/Projects/self/kimi-work.
     # NOTE: git+file inputs only include tracked files and require a CLEAN tree —
     # commit your changes there, then `nix flake lock --update-input kimi-work`.
-    kimi-work = {
-      url = "git+file:///home/samuel/Projects/self/kimi-work";
-    };
+    #kimi-work = {
+    #  url = "git+file:///home/samuel/Projects/self/kimi-work";
+    #};
   };
 
   outputs =
@@ -104,6 +112,7 @@
             ({ pkgs, ... }: {
               imports = [
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.nix-index-database.homeModules.default
                 ./home/home.nix
               ];
               nix.package = pkgs.nix;

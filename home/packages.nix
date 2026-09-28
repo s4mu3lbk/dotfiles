@@ -80,7 +80,7 @@ in
       opencode-desktop
       # Kimi Work desktop app — local Linux port living outside nixpkgs
       # (flake input `kimi-work`; commit changes there, then refresh the lock)
-      inputs.kimi-work.packages.${pkgs.stdenv.hostPlatform.system}.kimi-work
+      #inputs.kimi-work.packages.${pkgs.stdenv.hostPlatform.system}.kimi-work
       pixelflasher
       etcher
       startrinity-cst

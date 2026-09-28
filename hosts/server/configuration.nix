@@ -130,6 +130,7 @@
       home.homeDirectory = "/home/${username}";
       imports = [
         inputs.sops-nix.homeManagerModules.sops
+        inputs.nix-index-database.homeModules.default
         ../../home/server.nix
 
         # Private HM modules — from the local nixos-private flake

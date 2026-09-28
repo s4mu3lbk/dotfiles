@@ -34,6 +34,19 @@
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.keyFile = "/home/samuel/.config/sops/age/keys.txt";
 
+  # Let samuel push closures into the store when deploying from another
+  # machine (nixos-rebuild --target-host / nix copy). samuel already has
+  # passwordless-equivalent root via sudo, so this grants nothing new.
+  nix.settings.trusted-users = [ "samuel" ];
+
+  # A headless server must never suspend: booted into the COSMIC
+  # specialisation it otherwise auto-suspends on idle and drops off the
+  # network and the VPN (observed mid-deploy on 2026-09-28).
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+
   # Swap — Nix builds (especially parallel C++ jobs) can exceed RAM;
   # a 16 GiB swapfile (ext4) keeps the machine alive under memory pressure.
   # Server-specific; the laptop uses its swap partition (see its hardware.nix).
